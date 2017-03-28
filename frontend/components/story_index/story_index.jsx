@@ -10,7 +10,7 @@ class StoryIndex extends React.Component {
   render() {
     return(
       <div id="story-index-master">
-        <h1>Component is online!!!</h1>
+        <h1>Storytime</h1>
       </div>
     );
   }
