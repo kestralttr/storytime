@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link,withRouter} from 'react-router';
+import StoryIndexItem from './story_index_item';
 
 class StoryIndex extends React.Component {
 
@@ -25,9 +26,11 @@ class StoryIndex extends React.Component {
     console.log(this.props);
     return(
       <section id="story-index-master">
-        <h1>Storytime</h1>
-        {this.props.storyIndex.map(story => (
-          <p key={story.id}>{story.title}</p>
+        <h1 id="story-index-headline">Storytime</h1>
+        <h2 id="story-index-subheadline">Story List</h2>
+        {this.props.storyIndex.map((story,idx) => (
+          <StoryIndexItem key={story.id}
+            story={story} />
         ))}
       </section>
     );
