@@ -5,7 +5,7 @@ const _defaultState = {
   story: null,
   errors: []
 };
-
+console.log("story detail reducer accessed");
 const StoryDetailReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   let newState = merge({},state);

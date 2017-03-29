@@ -25,7 +25,7 @@ class StoryIndex extends React.Component {
   render() {
     return(
       <section id="story-index-master">
-        <h1 id="story-index-headline">Storytime</h1>
+        <h1 className="storytime-headline">Storytime</h1>
         <h2 id="story-index-subheadline">Story List</h2>
         <ul>
           {this.props.storyIndex.map((story,idx) => (

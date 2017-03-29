@@ -4,4 +4,12 @@ class Api::StoriesController < ApplicationController
     @stories = Story.all
   end
 
+  def show
+    @story = Story.find(params[:id])
+  end
+
+  def story_params
+    params.require(:story).permit(:title,:every_word,:body,:recent_identifier,:contributions)
+  end
+
 end
