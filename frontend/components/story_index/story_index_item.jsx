@@ -9,16 +9,18 @@ class StoryIndexItem extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
+  handleClick(url) {
+    console.log(this.props);
     return e => {
-      alert("Click has been made");
+      this.props.history.push(url);
     };
   }
 
   render() {
+    console.log(this.props.story.id);
     return(
       <li className="story-index-item"
-        onClick={this.handleClick()}>
+        onClick={this.handleClick(`story/${this.props.story.id}`)}>
         <span className="story-index-item-title">{this.props.story.title}</span><br></br>
         <span className="story-index-item-body">{this.props.story.body}</span>
       </li>

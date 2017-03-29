@@ -23,15 +23,16 @@ class StoryIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return(
       <section id="story-index-master">
         <h1 id="story-index-headline">Storytime</h1>
         <h2 id="story-index-subheadline">Story List</h2>
-        {this.props.storyIndex.map((story,idx) => (
-          <StoryIndexItem key={story.id}
-            story={story} />
-        ))}
+        <ul>
+          {this.props.storyIndex.map((story,idx) => (
+            <StoryIndexItem key={story.id}
+              story={story} />
+          ))}
+        </ul>
       </section>
     );
   }
