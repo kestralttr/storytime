@@ -16,7 +16,7 @@ class StoryDetail extends React.Component {
 
   render() {
     return(
-      <div style={"background-color:purple;"}>
+      <div>
         <p>You have reached a new component!</p>
       </div>
     );

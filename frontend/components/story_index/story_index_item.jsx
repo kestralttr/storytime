@@ -11,7 +11,7 @@ class StoryIndexItem extends React.Component {
 
   handleClick(url) {
     return e => {
-      this.props.history.push(url);
+      this.props.router.push(url);
     };
   }
 
