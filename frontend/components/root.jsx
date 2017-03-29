@@ -7,13 +7,12 @@ import StoryDetailContainer from './story_detail/story_detail_container';
 
 const Root = ({ store }) => {
 
-  console.log(StoryDetailContainer);
   return (
     <Provider store={store}>
       <Router>
         <App>
-          <Route exact={true} path="/" component={StoryIndexContainer}></Route>
-          <Route path="stories/:storyId" component={StoryDetailContainer}></Route>
+          <Route path="/" component={StoryIndexContainer} />
+          <Route path="stories/:storyId" component={StoryDetailContainer} />
         </App>
       </Router>
     </Provider>

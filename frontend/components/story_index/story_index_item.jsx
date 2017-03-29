@@ -10,14 +10,12 @@ class StoryIndexItem extends React.Component {
   }
 
   handleClick(url) {
-    console.log(this.props);
     return e => {
       this.props.history.push(url);
     };
   }
 
   render() {
-    console.log(this.props.story.id);
     return(
       <li className="story-index-item"
         onClick={this.handleClick(`story/${this.props.story.id}`)}>
