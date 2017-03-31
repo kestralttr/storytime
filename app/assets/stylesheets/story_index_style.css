@@ -1,15 +1,16 @@
 #story-index-master {
   width:100%;
   height:100%;
-  /*background-color: green;*/
 }
 
-#story-index-master h1 {
+.storytime-headline {
   text-align: center;
   font-size: 36px;
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-top: 60px;
+  padding-bottom: 80px;
   border-bottom: 1px solid black;
+  background: url("http://res.cloudinary.com/dzo2s4ovl/image/upload/v1490928584/writing1_olzjee.jpg") no-repeat center;
+  background-size: cover;
 }
 
 #story-index-master h2 {
@@ -17,15 +18,13 @@
   font-size: 30px;
   padding-top: 5px;
   padding-bottom: 10px;
-  /*border-bottom: 2px solid black;*/
 }
 
 .story-index-item {
   list-style: none;
-  /*background-color: red;*/
   border-bottom: 1px solid black;
   line-height: 24px;
-  padding: 5px 5px 5px 5px;
+  padding: 10px 10px 10px 10px;
   cursor: pointer;
   transition-property: color;
   transition-duration: 0.2s;
@@ -43,8 +42,4 @@
 
 .story-index-item-body {
   font-size: 18px;
-}
-
-div {
-  border-top: 2px solid purple;
 }

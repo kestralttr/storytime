@@ -1,7 +1,5 @@
-#story-detail-master h1 {
-  text-align: center;
-  font-size: 36px;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid black;
+
+#story-detail-body {
+  padding: 20px 20px 20px 20px;
+  font-size: 20px;
 }

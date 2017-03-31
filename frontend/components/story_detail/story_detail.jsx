@@ -29,8 +29,8 @@ class StoryDetail extends React.Component {
     console.log("story body",this.renderStoryBody());
     return(
       <section id="story-detail-master">
-        <h1 id="story-index-headline">Storytime</h1>
-        <div>{this.renderStoryBody()}</div>
+        <h1 className="storytime-headline"><a href="#">Storytime</a></h1>
+        <div id="story-detail-body">{this.renderStoryBody()}</div>
       </section>
     );
   }
