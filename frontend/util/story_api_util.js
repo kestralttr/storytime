@@ -16,3 +16,13 @@ export const fetchStory = (id,success,error) => {
     error: error
   });
 };
+
+export const createStory = (story,success,error) => {
+  $.ajax({
+    type: "POST",
+    url: `api/stories`,
+    data: story,
+    success: success,
+    error: error
+  });
+};

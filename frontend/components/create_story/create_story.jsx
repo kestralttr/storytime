@@ -6,12 +6,15 @@ class CreateStory extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
-      every_word: true
+      storyIndex: this.props.storyIndex
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateTitle = this.updateTitle.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+
   }
 
   handleSubmit(e) {
@@ -19,10 +22,12 @@ class CreateStory extends React.Component{
     if(!this.state.title) {
       return;
     } else {
-      const submission = {
-        title: this.state.title
+      const story = {
+        title: this.state.title,
+        every_word: true
       };
-      console.log(submission);
+      this.props.createStory({story});
+      window.location.reload();
     }
   }
 
@@ -31,6 +36,7 @@ class CreateStory extends React.Component{
   }
 
   render() {
+    console.log(this.props);
     return(
       <div id="create-story-master">
         <form>

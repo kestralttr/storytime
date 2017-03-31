@@ -16,7 +16,12 @@ class StoryIndexItem extends React.Component {
     };
   }
 
-  renderBodyIntro() {
+  renderBodyIntro(body) {
+    if(!body) {
+      return <em>new</em>;
+    } else {
+      return body.slice(0,50) + "...";
+    }
   }
 
   render() {
@@ -24,7 +29,7 @@ class StoryIndexItem extends React.Component {
       <li className="story-index-item"
         onClick={this.handleClick(`story/${this.props.story.id}`)}>
         <span className="story-index-item-title">{this.props.story.title}</span><br></br>
-        <span className="story-index-item-body">{this.props.story.body.slice(0,50) + "..."}</span>
+        <span className="story-index-item-body">{this.renderBodyIntro(this.props.story.body)}</span>
       </li>
     );
   }

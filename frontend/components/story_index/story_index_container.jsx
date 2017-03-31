@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import StoryIndex from './story_index';
-import {requestStories, requestStory} from '../../actions/story_actions';
+import {requestStories, requestStory, createStory} from '../../actions/story_actions';
 
 const mapStateToProps = state => ({
   storyIndex: state.storyIndex.stories,
@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   requestStories: () => dispatch(requestStories()),
-  requestStory: (id) => dispatch(requestStory(id))
+  requestStory: (id) => dispatch(requestStory(id)),
+  createStory: (story) => dispatch(createStory(story))
 });
 
 export default connect(
