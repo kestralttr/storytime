@@ -7,7 +7,8 @@ class StoryIndex extends React.Component {
 
   constructor(props) {
     super(props);
-
+    this.state ={
+    };
     this.renderOutStories = this.renderOutStories.bind(this);
   }
 
@@ -24,6 +25,7 @@ class StoryIndex extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return(
       <section id="story-index-master">
         <h1 className="storytime-headline"><a href="#">Storytime</a></h1>
@@ -35,7 +37,8 @@ class StoryIndex extends React.Component {
           ))}
           <li>Placeholder for pagination</li>
         </ul>
-        <CreateStory />
+        <CreateStory
+          storyIndex={this.props.storyIndex} />
       </section>
     );
   }

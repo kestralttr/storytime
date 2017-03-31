@@ -3,7 +3,8 @@ import StoryIndex from './story_index';
 import {requestStories, requestStory} from '../../actions/story_actions';
 
 const mapStateToProps = state => ({
-  storyIndex: state.storyIndex.stories
+  storyIndex: state.storyIndex.stories,
+  state: state
 });
 
 const mapDispatchToProps = dispatch => ({

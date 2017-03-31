@@ -5,22 +5,39 @@ class CreateStory extends React.Component{
 
   constructor(props) {
     super(props);
+    this.state = {
+      title: "",
+      every_word: true
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateTitle = this.updateTitle.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    if(!this.state.title) {
+      return;
+    } else {
+      const submission = {
+        title: this.state.title
+      };
+      console.log(submission);
+    }
+  }
+
+  updateTitle(e) {
+    this.setState({title: e.target.value});
   }
 
   render() {
     return(
       <div id="create-story-master">
         <form>
-          <span>Title: </span><input /><br></br>
-          <span>Every Word: </span><input name="every_word" type="radio" defaultChecked/>
-          <span>Every Sentence: </span><input name="every_word" type="radio"/><br></br>
-          <input type="submit" value="Submit" onClick={this.handleSubmit}></input>
+          <span>Title: </span><input type="text"maxLength="50" onChange={this.updateTitle} /><br></br>
+          <span>Every Word: </span><input className="radio" name="every_word" type="radio" defaultChecked/><br></br>
+          <span>Every Sentence: </span><input className="radio" name="every_word" type="radio"/><br></br>
+          <input type="submit" value="Create" onClick={this.handleSubmit}></input>
         </form>
 
 
