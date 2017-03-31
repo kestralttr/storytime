@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link,withRouter} from 'react-router';
 import StoryIndexItem from './story_index_item';
+import CreateStory from '../create_story/create_story';
 
 class StoryIndex extends React.Component {
 
@@ -32,7 +33,9 @@ class StoryIndex extends React.Component {
             <StoryIndexItem key={story.id}
               story={story} />
           ))}
+          <li>Placeholder for pagination</li>
         </ul>
+        <CreateStory />
       </section>
     );
   }
