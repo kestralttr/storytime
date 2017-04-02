@@ -1,0 +1,17 @@
+#update-story-master {
+  position: fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:80px;
+  background-color: #424242;
+}
+
+#update-story-master form {
+  padding-left: 20px;
+}
+
+#update-story-master input[type='text'] {
+  margin: 10px 10px 10px 10px;
+  outline-color: red;
+}

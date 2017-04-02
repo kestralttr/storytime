@@ -6,7 +6,8 @@ class CreateStory extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      storyIndex: this.props.storyIndex
+      storyIndex: this.props.storyIndex,
+      title: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,7 +37,6 @@ class CreateStory extends React.Component{
   }
 
   render() {
-    console.log(this.props);
     return(
       <div id="create-story-master">
         <form>

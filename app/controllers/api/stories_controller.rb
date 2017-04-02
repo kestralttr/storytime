@@ -21,6 +21,15 @@ class Api::StoriesController < ApplicationController
     @story = Story.find(params[:id])
   end
 
+  def update
+    @story = Story.find(params[:id])
+    if @story.update({body: @story.body + " " + story_params[:body]})
+      render "api/stories/show"
+    else
+      render json: ["Story update failed."], status:422
+    end
+  end
+
   def story_params
     params.require(:story).permit(:title,:every_word,:body,:recent_identifier,:contributions)
   end

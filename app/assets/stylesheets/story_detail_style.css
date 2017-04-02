@@ -1,6 +1,23 @@
 
+#story-detail-master {
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:80px;
+  overflow: auto;
+}
+
 #story-detail-body {
   padding: 20px 20px 20px 20px;
   font-size: 20px;
   line-height: 22px;
+}
+
+#story-detail-master h2 {
+  text-decoration: underline;
+  font-size: 30px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  text-align: center;
 }

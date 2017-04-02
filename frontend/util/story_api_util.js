@@ -26,3 +26,13 @@ export const createStory = (story,success,error) => {
     error: error
   });
 };
+
+export const updateStory = (id,story,success,error) => {
+  $.ajax({
+    type: "PATCH",
+    url: `api/stories/${id}`,
+    data: story,
+    success: success,
+    error: error
+  });
+};
