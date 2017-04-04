@@ -15,8 +15,19 @@ class UpdateStory extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let str = this.state.body;
-    if(str.includes(" ")) {
+    if(this.state.body === "") {
+      return;
+    }
+    let arr = this.state.body.split("");
+    let idx = 0;
+    let containsSpace = false;
+    while(idx < arr.length) {
+      if(arr[idx] === " ") {
+        containsSpace = true;
+      }
+      idx++;
+    }
+    if(containsSpace === true) {
       return;
     } else {
       const story = {

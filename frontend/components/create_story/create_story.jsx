@@ -25,7 +25,8 @@ class CreateStory extends React.Component{
     } else {
       const story = {
         title: this.state.title,
-        every_word: true
+        every_word: true,
+        body: ""
       };
       this.props.createStory({story});
       window.location.reload();

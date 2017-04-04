@@ -7,7 +7,8 @@ class Api::StoriesController < ApplicationController
   def create
     @story = Story.new(
       title: story_params[:title],
-      every_word: story_params[:every_word]
+      every_word: story_params[:every_word],
+      body: story_params[:body]
     )
     if @story.save
       @stories = Story.all.reverse
