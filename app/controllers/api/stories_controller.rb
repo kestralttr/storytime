@@ -1,7 +1,7 @@
 class Api::StoriesController < ApplicationController
 
   def index
-    @stories = Story.all.reverse
+    @stories = Story.all.order('updated_at DESC')
   end
 
   def create
@@ -11,7 +11,7 @@ class Api::StoriesController < ApplicationController
       body: story_params[:body]
     )
     if @story.save
-      @stories = Story.all.reverse
+      @stories = Story.all.order('updated_at DESC')
       render "api/stories/index"
     else
       render json: ["Story creation failed."], status:422

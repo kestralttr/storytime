@@ -38,6 +38,7 @@ class UpdateStory extends React.Component {
       let inputBox = document.getElementById("add-word-input");
       inputBox.value = "";
       this.state.body = "";
+      
     }
   }
 
