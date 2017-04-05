@@ -1,4 +1,4 @@
-import {RECEIVE_STORY} from '../actions/story_actions';
+import {RECEIVE_STORY, CLEAR_STORY} from '../actions/story_actions';
 import {merge} from 'lodash';
 
 const _defaultState = {
@@ -12,6 +12,11 @@ const StoryDetailReducer = (state = _defaultState, action) => {
   switch (action.type) {
     case RECEIVE_STORY:
       newState["story"] = action.story;
+      newState["errors"] = [];
+      return newState;
+    case CLEAR_STORY:
+      console.log("CLEARING STORY");
+      newState["story"] = null;
       newState["errors"] = [];
       return newState;
     default:

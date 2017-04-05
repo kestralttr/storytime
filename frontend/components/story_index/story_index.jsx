@@ -12,6 +12,13 @@ class StoryIndex extends React.Component {
     this.renderOutStories = this.renderOutStories.bind(this);
   }
 
+  componentWillReceiveProps(newProps) {
+    if(newProps.storyDetail && newProps.storyDetail.story) {
+      this.props.clearStory();
+      console.log(this.props);
+    }
+  }
+
   componentDidMount() {
     this.props.requestStories();
   }

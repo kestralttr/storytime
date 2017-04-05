@@ -4,6 +4,7 @@ export const REQUEST_STORY = "REQUEST_STORY";
 export const RECEIVE_STORY = "RECEIVE_STORY";
 export const CREATE_STORY = "CREATE_STORY";
 export const UPDATE_STORY = "UPDATE_STORY";
+export const CLEAR_STORY = "CLEAR_STORY";
 
 export const requestStories = () => ({
   type: REQUEST_STORIES
@@ -22,6 +23,10 @@ export const requestStory = (id) => ({
 export const receiveStory = (story) => ({
   type: RECEIVE_STORY,
   story: story
+});
+
+export const clearStory = () => ({
+  type: CLEAR_STORY
 });
 
 export const createStory = (story) => ({
