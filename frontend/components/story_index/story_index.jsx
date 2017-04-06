@@ -45,6 +45,7 @@ class StoryIndex extends React.Component {
         </ul>
         <CreateStory
           storyIndex={this.props.storyIndex}
+          storyDetail={this.props.storyDetail}
           createStory={this.props.createStory}
           requestStories={this.props.requestStories} />
       </section>

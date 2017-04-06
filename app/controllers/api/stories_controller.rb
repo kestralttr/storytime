@@ -11,8 +11,9 @@ class Api::StoriesController < ApplicationController
       body: story_params[:body]
     )
     if @story.save
-      @stories = Story.all.order('updated_at DESC')
-      render "api/stories/index"
+      # @stories = Story.all.order('updated_at DESC')
+      # render "api/stories/index"
+      render "api/stories/show"
     else
       render json: ["Story creation failed."], status:422
     end

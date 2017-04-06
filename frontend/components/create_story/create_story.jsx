@@ -7,7 +7,8 @@ class CreateStory extends React.Component{
     super(props);
     this.state = {
       storyIndex: this.props.storyIndex,
-      title: ""
+      title: "",
+      watchForNewStory: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,7 +16,11 @@ class CreateStory extends React.Component{
   }
 
   componentWillReceiveProps(nextProps) {
-
+    if(nextProps.storyDetail && this.state.watchForNewStory) {
+      console.log("nextProps storyDetail", nextProps.storyDetail);
+      this.setState({watchForNewStory: false});
+      this.props.router.push(`story/${nextProps.storyDetail.id}`);
+    }
   }
 
   handleSubmit(e) {
@@ -29,7 +34,8 @@ class CreateStory extends React.Component{
         body: ""
       };
       this.props.createStory({story});
-      window.location.reload();
+      this.setState({watchForNewStory: true});
+
     }
   }
 
