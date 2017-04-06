@@ -17,7 +17,6 @@ class CreateStory extends React.Component{
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.storyDetail && this.state.watchForNewStory) {
-      console.log("nextProps storyDetail", nextProps.storyDetail);
       this.setState({watchForNewStory: false});
       this.props.router.push(`story/${nextProps.storyDetail.id}`);
     }

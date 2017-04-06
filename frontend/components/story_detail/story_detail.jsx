@@ -27,9 +27,7 @@ class StoryDetail extends React.Component {
   }
 
   renderStoryBody() {
-    console.log(this.props);
     if(!this.props.storyDetail || !this.props.storyDetail.body) {
-      console.log("HIT");
       return(
         <p><em>Choose the first word!</em></p>
       );
