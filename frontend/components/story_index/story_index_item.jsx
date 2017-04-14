@@ -20,7 +20,7 @@ class StoryIndexItem extends React.Component {
     if(!body) {
       return <em>new</em>;
     } else {
-      return body.slice(0,50) + "...";
+      return body.slice(0,45) + "...";
     }
   }
 

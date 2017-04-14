@@ -12,6 +12,12 @@ class UpdateStory extends React.Component {
 
     this.updateTitle = this.updateTitle.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTrackerKeyMatch = this.handleTrackerKeyMatch.bind(this);
+  }
+
+  handleTrackerKeyMatch() {
+    let errorMessage = document.getElementById("error-message");
+    errorMessage.innerHTML = "Apologies.  As the most recent contributor to this story, you must wait either 24 hours or until someone else collaborates before you can add more text.";
   }
 
   handleSubmit(e) {
@@ -20,9 +26,13 @@ class UpdateStory extends React.Component {
       let milliseconds = Math.round(new Date().getTime());
       Cookies.set('storytimeTrackerKey', milliseconds,{expires: 1});
     }
-
-
-    console.log(Cookies.get());
+    let userTrackerKey = Cookies.get('storytimeTrackerKey');
+    console.log(userTrackerKey);
+    if(userTrackerKey === this.props.storyDetail.tracker_key) {
+      console.log("MATCH FLAGGED");
+      this.handleTrackerKeyMatch();
+      return;
+    }
     if(!this.state.body) {
       return;
     }
@@ -39,14 +49,14 @@ class UpdateStory extends React.Component {
       return;
     } else {
       const story = {
-        body: this.state.body
+        body: this.state.body,
+        tracker_key: userTrackerKey
       };
       let id = this.props.params.storyId;
       this.props.updateStory(id,{story});
       let inputBox = document.getElementById("add-word-input");
       inputBox.value = "";
       this.state.body = "";
-
     }
   }
 
@@ -55,12 +65,14 @@ class UpdateStory extends React.Component {
   }
 
   render() {
+    console.log(Cookies.get('storytimeTrackerKey'));
     return(
       <div id="update-story-master">
         <form>
-          <span>Title: </span><input id="add-word-input" type="text"maxLength="50" onChange={this.updateTitle} /><br></br>
-          <input type="submit" value="Create" onClick={this.handleSubmit}></input>
+          <span>Next word (no spaces): </span><input id="add-word-input" type="text"maxLength="50" onChange={this.updateTitle} /><input type="submit" value="Create" onClick={this.handleSubmit}></input><br></br>
+          <p id="error-message"></p>
         </form>
+
 
       </div>
     );

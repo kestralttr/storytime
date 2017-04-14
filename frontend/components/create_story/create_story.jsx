@@ -46,10 +46,11 @@ class CreateStory extends React.Component{
     return(
       <div id="create-story-master">
         <form>
-          <span>Title: </span><input type="text"maxLength="50" onChange={this.updateTitle} /><br></br>
+          <span>Title: </span><input type="text"maxLength="50" onChange={this.updateTitle} /><input type="submit" value="Create" onClick={this.handleSubmit}></input><br></br>
+          {/*
           <span>Every Word: </span><input className="radio" name="every_word" type="radio" defaultChecked/><br></br>
           <span>Every Sentence: </span><input className="radio" name="every_word" type="radio"/><br></br>
-          <input type="submit" value="Create" onClick={this.handleSubmit}></input>
+          */}
         </form>
 
 

@@ -15,3 +15,15 @@
   margin: 10px 10px 10px 10px;
   outline-color: red;
 }
+
+#error-message {
+  margin: 0px 10px 10px 10px;
+  color: orange;
+}
+
+@media (max-width:542px) {
+  #error-message {
+    font-size: 14px;
+    margin-top: -5px;
+  }
+}

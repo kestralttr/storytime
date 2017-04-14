@@ -32,6 +32,7 @@ class StoryIndex extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return(
       <section id="story-index-master">
         <h1 className="storytime-headline"><a href="#">Storytime</a></h1>
@@ -41,7 +42,7 @@ class StoryIndex extends React.Component {
             <StoryIndexItem key={story.id}
               story={story} />
           ))}
-          <li>Placeholder for pagination</li>
+          {/* <li>Placeholder for pagination</li> */ }
         </ul>
         <CreateStory
           storyIndex={this.props.storyIndex}

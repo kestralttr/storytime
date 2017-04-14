@@ -25,7 +25,9 @@ class Api::StoriesController < ApplicationController
 
   def update
     @story = Story.find(params[:id])
-    if @story.update({body: @story.body + " " + story_params[:body]})
+    if @story.tracker_key == story_params[:tracker_key]
+      render "api/stories/show"
+    elsif @story.update({body: @story.body + " " + story_params[:body],tracker_key: story_params[:tracker_key]})
       render "api/stories/show"
     else
       render json: ["Story update failed."], status:422
@@ -33,7 +35,7 @@ class Api::StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:title,:every_word,:body,:recent_identifier,:contributions)
+    params.require(:story).permit(:title,:every_word,:body,:tracker_key,:contributions)
   end
 
 end
