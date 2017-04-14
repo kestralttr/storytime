@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
+import * as Cookies from "js-cookie";
 
 class UpdateStory extends React.Component {
 
@@ -15,7 +16,14 @@ class UpdateStory extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if(this.state.body === "") {
+    if(!Cookies.get('storytimeTrackerKey')) {
+      let milliseconds = Math.round(new Date().getTime());
+      Cookies.set('storytimeTrackerKey', milliseconds,{expires: 1});
+    }
+
+
+    console.log(Cookies.get());
+    if(!this.state.body) {
       return;
     }
     let arr = this.state.body.split("");
@@ -38,7 +46,7 @@ class UpdateStory extends React.Component {
       let inputBox = document.getElementById("add-word-input");
       inputBox.value = "";
       this.state.body = "";
-      
+
     }
   }
 
