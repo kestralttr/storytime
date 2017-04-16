@@ -4,6 +4,7 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 import App from './app';
 import StoryIndexContainer from './story_index/story_index_container';
 import StoryDetailContainer from './story_detail/story_detail_container';
+import Splash from './splash/splash';
 
 const Root = ({ store }) => {
 
@@ -11,7 +12,8 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={StoryIndexContainer} />
+          <IndexRoute component={Splash} />
+          <Route path="stories" component={StoryIndexContainer}/>
           <Route path="story/:storyId" component={StoryDetailContainer} />
         </Route>
       </Router>

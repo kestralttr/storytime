@@ -3,7 +3,7 @@
   bottom:0;
   left:0;
   right:0;
-  height:80px;
+  height:40px;
   background-color: #424242;
   min-width: 480px;
 }
@@ -15,5 +15,7 @@
 
 #create-story-master input[type='text'] {
   margin: 10px 10px 10px 10px;
-  outline-color: red;
+  width: 200px;
+  outline-color: Transparent;
+  font-family:  'Source Sans Pro', sans-serif;
 }

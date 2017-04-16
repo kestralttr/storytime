@@ -3,16 +3,67 @@
   top:0;
   left:0;
   right:0;
-  bottom:120px;
+  bottom:40px;
   overflow: auto;
+}
+
+#story-index-master ul {
+  /*border: 1px solid purple;*/
+  position:absolute;
+  top:150px;
+  left:0;
+  right:0;
+  bottom:0px;
+  overflow-y: auto;
+}
+
+#storytime-index-nav-bar {
+  height:40px;
+}
+
+#storytime-index-splash-link {
+  height:40px;
+  line-height: 40px;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  background-color: #232323;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#storytime-index-splash-link:hover {
+  background-color: #383838;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#storytime-index-stories-link {
+  height:40px;
+  line-height: 40px;
+  float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  background-color: #232323;
+  cursor: pointer;
+}
+
+#storytime-index-stories-link:hover {
+  background-color: #383838;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 .storytime-headline {
   text-align: center;
-  font-size: 36px;
-  padding-top: 60px;
-  padding-bottom: 80px;
+  font-size: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   border-bottom: 1px solid black;
+  background-color: black;
   background: url("http://res.cloudinary.com/dzo2s4ovl/image/upload/v1490928584/writing1_olzjee.jpg") no-repeat center;
   background-size: cover;
 }
@@ -26,19 +77,43 @@
 }
 
 .story-index-item {
+  position:relative;
   list-style: none;
   border-bottom: 1px solid black;
   line-height: 24px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 10px 10px 40px;
   cursor: pointer;
-  transition-property: color;
-  transition-duration: 0.2s;
+  background-color: black;
+  transition-property: background-color;
+  transition-duration: 0.4s;
+  /*border: 1px solid green;*/
 }
 
 .story-index-item:hover {
-  color: red;
-  transition-property: color;
-  transition-duration: 0.2s;
+  background-color: #191919;
+  transition-property: background-color;
+  transition-duration: 0.4s;
+}
+
+
+.story-index-icon {
+  position: absolute;
+  top:25px;
+  left:15px;
+  width:10px;
+  bottom:25px;
+  border-radius: 0px;
+  background-color: black;
+  transition-property: transform;
+  transition-duration: 0.4s;
+  transform: rotate(0);
+  transition-delay: 0.1s;
+}
+
+.story-index-item:hover .story-index-icon {
+  transform: rotate(90deg);
+  transition-property: transform;
+  transition-duration: 0.4s;*/
 }
 
 .story-index-item-title {

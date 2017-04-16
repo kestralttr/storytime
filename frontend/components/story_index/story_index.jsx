@@ -10,6 +10,7 @@ class StoryIndex extends React.Component {
     this.state ={
     };
     this.renderOutStories = this.renderOutStories.bind(this);
+    this.requestStories = this.requestStories.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -20,6 +21,10 @@ class StoryIndex extends React.Component {
   }
 
   componentDidMount() {
+    this.props.requestStories();
+  }
+
+  requestStories() {
     this.props.requestStories();
   }
 
@@ -35,8 +40,15 @@ class StoryIndex extends React.Component {
     console.log(this.props);
     return(
       <section id="story-index-master">
-        <h1 className="storytime-headline"><a href="#">Storytime</a></h1>
-        <h2 id="story-index-subheadline">Story List</h2>
+        <div id="storytime-index-nav-bar">
+          <div id="storytime-index-splash-link">
+            <a href="#">Storytime</a>
+          </div>
+          <div id="storytime-index-stories-link" onClick={this.requestStories}>
+            Refresh Stories
+          </div>
+        </div>
+        <h1 className="storytime-headline">Stories</h1>
         <ul>
           {this.props.storyIndex.map((story,idx) => (
             <StoryIndexItem key={story.id}
