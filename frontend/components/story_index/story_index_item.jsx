@@ -26,15 +26,19 @@ class StoryIndexItem extends React.Component {
 
   render() {
     return(
-      <li className="story-index-item"
-        onClick={this.handleClick(`story/${this.props.story.id}`)}>
-        <div className="story-index-icon"></div>
-        <span className="story-index-item-title">
-          {this.props.story.title}
-        </span><br></br>
-        <span className="story-index-item-body">
-          {this.renderBodyIntro(this.props.story.body)}
-        </span>
+      <li className="story-index-item">
+        <div className="story-index-item-content"
+          onClick={this.handleClick(`story/${this.props.story.id}`)}>
+
+          <span className="story-index-item-title">
+            {this.props.story.title}
+          </span><br></br>
+          <span className="story-index-item-body">
+            {this.renderBodyIntro(this.props.story.body)}
+          </span>
+
+        </div>
+
       </li>
     );
   }
