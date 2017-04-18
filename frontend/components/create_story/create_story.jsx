@@ -26,6 +26,8 @@ class CreateStory extends React.Component{
     e.preventDefault();
     if(!this.state.title) {
       return;
+    } else if(this.state.title.length > 50) {
+      return;
     } else {
       const story = {
         title: this.state.title,

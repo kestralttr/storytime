@@ -11,6 +11,8 @@
 #create-story-master form {
   padding-left: 20px;
   min-width: 300px;
+  position:relative;
+
 }
 
 #create-story-master input[type='text'] {
@@ -18,4 +20,26 @@
   width: 200px;
   outline-color: Transparent;
   font-family:  'Source Sans Pro', sans-serif;
+}
+
+#create-story-master input[type='submit'] {
+    font-size: 16px;
+    position: absolute;
+    top: 5px;
+    left: 290px;
+    background-color: rgba(50,50,50,0.3);
+    color: #e5e5e5;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    outline: none;
+    border: none;
+  }
+
+#create-story-master input[type='submit']:hover {
+  background-color: rgba(50,50,50,0.7);
+  transition-property: background-color;
+  transition-duration: 0.3s;
 }
