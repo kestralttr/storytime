@@ -4,7 +4,7 @@
   left:0;
   right:0;
   height:40px;
-  background-color: #424242;
+  background-color: #232323;
   min-width: 480px;
 }
 
@@ -16,9 +16,13 @@
 }
 
 #create-story-master input[type='text'] {
-  margin: 10px 10px 10px 10px;
+  margin: 8px 10px 10px 10px;
   width: 200px;
+  color: white;
+  background-color: #424242;
   outline-color: Transparent;
+  font-size: 14px;
+  border: 2px solid black;
   font-family:  'Source Sans Pro', sans-serif;
 }
 

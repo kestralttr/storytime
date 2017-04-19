@@ -8,14 +8,86 @@
   overflow: auto;
 }
 
+#storytime-detail-nav-bar {
+  height:40px;
+  overflow: hidden;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  background-color: #232323;
+  /*border-bottom: 3px inset #232323;*/
+}
+
+#storytime-detail-splash-link {
+  height:40px;
+  line-height: 40px;
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  border-right: 2px solid #383838;
+  background-color: #232323;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#storytime-detail-splash-link:hover {
+  background-color: #383838;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#storytime-detail-splash-link:active {
+  color: black;
+}
+
+#storytime-detail-stories-link {
+  height:40px;
+  line-height: 40px;
+  float: right;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  border-left: 2px solid #383838;
+  background-color: #232323;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#storytime-detail-stories-link:hover {
+  background-color: #383838;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#storytime-detail-stories-link:active {
+  color: black;
+}
+
 #story-detail-body {
   padding: 20px 20px 20px 20px;
   font-size: 20px;
   line-height: 22px;
 }
 
+#storytime-detail-headline {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid black;
+  background-color: black;
+  background: url("http://res.cloudinary.com/dzo2s4ovl/image/upload/v1490928584/writing1_olzjee.jpg") no-repeat center;
+  background-size: cover;
+}
+
 #story-detail-master h2 {
   text-decoration: underline;
+  margin-top: 60px;
   font-size: 30px;
   padding-top: 5px;
   padding-bottom: 10px;

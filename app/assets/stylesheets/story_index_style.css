@@ -20,6 +20,11 @@
 #storytime-index-nav-bar {
   height:40px;
   overflow: hidden;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  background-color: #232323;
 }
 
 #storytime-index-splash-link {
@@ -30,6 +35,7 @@
   padding-right: 20px;
   box-sizing: border-box;
   background-color: #232323;
+  border-right: 2px solid #383838;
   cursor: pointer;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -53,7 +59,10 @@
   padding-right: 20px;
   box-sizing: border-box;
   background-color: #232323;
+  border-left: 2px solid #383838;
   cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 #storytime-index-stories-link:hover {
@@ -69,6 +78,7 @@
 .storytime-headline {
   text-align: center;
   font-size: 50px;
+  margin-top: 40px;
   padding-top: 30px;
   padding-bottom: 30px;
   border-bottom: 1px solid black;

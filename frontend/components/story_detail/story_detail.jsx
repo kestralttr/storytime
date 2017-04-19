@@ -12,10 +12,20 @@ class StoryDetail extends React.Component {
     };
     this.renderStoryTitle = this.renderStoryTitle.bind(this);
     this.renderStoryBody = this.renderStoryBody.bind(this);
+    this.requestStory = this.requestStory.bind(this);
+    this.returnToStoryIndex = this.returnToStoryIndex.bind(this);
   }
 
   componentDidMount() {
     this.props.requestStory(this.props.params.storyId);
+  }
+
+  requestStory() {
+    this.props.requestStory(this.props.params.storyId);
+  }
+
+  returnToStoryIndex() {
+    return this.props.router.push("stories");
   }
 
   renderStoryTitle() {
@@ -39,10 +49,18 @@ class StoryDetail extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return(
       <section id="story-detail-master">
-        <h1 className="storytime-headline"><a href="#">Storytime</a></h1>
-        <h2 id="story-index-subheadline">{this.renderStoryTitle()}</h2>
+        <div id="storytime-detail-nav-bar">
+          <div id="storytime-detail-splash-link" onClick={this.returnToStoryIndex}>
+            Stories
+          </div>
+          <div id="storytime-detail-stories-link" onClick={this.requestStory}>
+            Refresh Story
+          </div>
+        </div>
+        <h2>{this.renderStoryTitle()}</h2>
         <div id="story-detail-body">{this.renderStoryBody()}</div>
         <UpdateStory
           storyDetail={this.props.storyDetail}

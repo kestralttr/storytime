@@ -17,7 +17,7 @@ class UpdateStory extends React.Component {
 
   handleTrackerKeyMatch() {
     let errorMessage = document.getElementById("error-message");
-    errorMessage.innerHTML = "Apologies.  As the most recent contributor to this story, you must wait either 24 hours or until someone else collaborates before you can add more text.";
+    errorMessage.innerHTML = "Apologies.  Someone else must contribute before you can add another word.";
   }
 
   handleSubmit(e) {
