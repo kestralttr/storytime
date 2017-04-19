@@ -150,15 +150,17 @@
 }
 
 .story-index-item-content {
-  width:420px;
+  max-width:420px;
   margin: 0 auto;
   cursor: pointer;
   position: relative;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  transition: margin-top margin-bottom padding-top padding-bottom transform;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition: margin-top margin-bottom padding-top padding-bottom padding-left padding-right transform;
   transition-duration: 0.5s;
   transform: scale(1.0,1.0);
   /*border: 1px solid grey;*/
