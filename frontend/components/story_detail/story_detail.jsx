@@ -25,7 +25,7 @@ class StoryDetail extends React.Component {
       scriptTag.src = "http://code.responsivevoice.org/responsivevoice.js";
       scriptTag.async = true;
 
-      document.body.appendChild(scriptTag);
+      document.head.appendChild(scriptTag);
     }
   }
 
