@@ -28,6 +28,15 @@ class Splash extends React.Component {
     window.setTimeout(() => (
       $("#splash-background").fadeTo(2000,0.5,"linear")
     ),750);
+
+    if (!document.getElementById("rvJS")) {
+      let scriptTag = document.createElement("script");
+      scriptTag.id = "rvJS";
+      scriptTag.src = "http://code.responsivevoice.org/responsivevoice.js";
+      scriptTag.async = true;
+
+      document.body.appendChild(scriptTag);
+    }
   }
 
   handleReload() {

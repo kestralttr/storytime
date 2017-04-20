@@ -18,6 +18,20 @@ class StoryDetail extends React.Component {
 
   componentDidMount() {
     this.props.requestStory(this.props.params.storyId);
+
+    if (!document.getElementById("rvJS")) {
+      let scriptTag = document.createElement("script");
+      scriptTag.id = "rvJS";
+      scriptTag.src = "http://code.responsivevoice.org/responsivevoice.js";
+      scriptTag.async = true;
+
+      document.body.appendChild(scriptTag);
+    }
+  }
+
+  componentWillUnmount() {
+    // let scriptTag = document.getElementById("rvJS");
+    // document.body.removeChild(scriptTag);
   }
 
   requestStory() {
@@ -59,6 +73,9 @@ class StoryDetail extends React.Component {
           <div id="storytime-detail-stories-link" onClick={this.requestStory}>
             Refresh Story
           </div>
+        </div>
+        <div id="read-story-container">
+
         </div>
         <h2>{this.renderStoryTitle()}</h2>
         <div id="story-detail-body">{this.renderStoryBody()}</div>

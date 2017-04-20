@@ -87,7 +87,7 @@
     font-size: 16px;
     position: absolute;
     top: 5px;
-    left: 310px;
+    left: 230px;
     background-color: rgba(50,50,50,0.3);
     color: #e5e5e5;
     padding: 5px;
@@ -108,6 +108,29 @@
 #error-message {
   margin: 0px 10px 10px 10px;
   color: orange;
+}
+
+#play-pause-button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  height:30px;
+  width:30px;
+  text-align:center;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+#play-pause-button:hover {
+  text-shadow: 0px 0px 2px #cecece;
+}
+
+.play-button {
+
+}
+
+.pause-button {
+
 }
 
 @media (max-width:542px) {

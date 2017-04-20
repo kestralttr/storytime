@@ -14,6 +14,22 @@ class UpdateStory extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTrackerKeyMatch = this.handleTrackerKeyMatch.bind(this);
     this.hideErrorMessage = this.hideErrorMessage.bind(this);
+    this.toggleReading = this.toggleReading.bind(this);
+  }
+
+  componentDidMount() {
+    if (!document.getElementById("rvJS")) {
+      let scriptTag = document.createElement("script");
+      scriptTag.id = "rvJS";
+      scriptTag.src = "http://code.responsivevoice.org/responsivevoice.js";
+      scriptTag.async = true;
+
+      document.body.appendChild(scriptTag);
+    }
+  }
+
+  componentWillUnmount() {
+    responsiveVoice.cancel();
   }
 
   handleTrackerKeyMatch() {
@@ -51,8 +67,12 @@ class UpdateStory extends React.Component {
     if(containsSpace === true) {
       return;
     } else {
+      let first = arr[0];
+      let rest = arr.slice(1,arr.length).join("").toLowerCase();
+      let submission = first + rest;
+
       const story = {
-        body: this.state.body,
+        body: submission,
         tracker_key: userTrackerKey
       };
       let id = this.props.params.storyId;
@@ -70,6 +90,22 @@ class UpdateStory extends React.Component {
     ),500);
   }
 
+  toggleReading() {
+    let playPauseButton = document.getElementById("play-pause-button");
+
+    if(!responsiveVoice.isPlaying() && this.props.storyDetail) {
+      let body = this.props.storyDetail.body;
+      playPauseButton.innerHTML = "&#9724;";
+      let switchBack = function() {
+        playPauseButton.innerHTML = "&#9658;";
+      }
+      responsiveVoice.speak(body, "UK English Male", {onend: switchBack});
+    } else if(responsiveVoice.isPlaying() && this.props.storyDetail) {
+      playPauseButton.innerHTML = "&#9658;";
+      responsiveVoice.cancel();
+    }
+  }
+
   updateTitle(e) {
     this.setState({body: e.target.value});
   }
@@ -84,10 +120,10 @@ class UpdateStory extends React.Component {
           </p>
         </div>
         <form>
-          <span>Next word (no spaces): </span><input id="add-word-input" type="text"maxLength="50" onChange={this.updateTitle} /><input type="submit" value="Create" onClick={this.handleSubmit}></input><br></br>
+          <span>Next word: </span><input id="add-word-input" type="text"maxLength="50" autoComplete="off" onChange={this.updateTitle} /><input type="submit" value="Create" onClick={this.handleSubmit}></input><br></br>
           <p id="error-message"></p>
         </form>
-
+        <div id="play-pause-button" onClick={this.toggleReading}>&#9658;</div>
 
       </div>
     );
