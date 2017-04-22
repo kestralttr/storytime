@@ -85,11 +85,25 @@
   background-size: cover;
 }
 
-#story-detail-master h2 {
+#story-detail-master h2 p {
   text-decoration: underline;
   margin-top: 60px;
   font-size: 30px;
   padding-top: 5px;
   padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
+}
+
+@media only screen and (max-width: 375px) {
+
+  #story-detail-body {
+    font-size: 16px;
+  }
+
+  #story-detail-master h2 p {
+    font-size: 24px;
+  }
+
 }
