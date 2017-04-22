@@ -46,9 +46,7 @@ class UpdateStory extends React.Component {
       Cookies.set('storytimeTrackerKey', milliseconds,{expires: 1/96});
     }
     let userTrackerKey = Cookies.get('storytimeTrackerKey');
-    console.log(userTrackerKey);
     if(userTrackerKey === this.props.storyDetail.tracker_key) {
-      console.log("MATCH FLAGGED");
       this.handleTrackerKeyMatch();
       return;
     }
@@ -111,7 +109,6 @@ class UpdateStory extends React.Component {
   }
 
   render() {
-    console.log(Cookies.get('storytimeTrackerKey'));
     return(
       <div id="update-story-master">
         <div id="update-story-error-container" onClick={this.hideErrorMessage}>

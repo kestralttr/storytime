@@ -78,6 +78,8 @@
 .storytime-headline {
   text-align: center;
   font-size: 50px;
+  color: #efefef;
+  text-shadow: 1px 1px 5px black;
   margin-top: 40px;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -163,6 +165,7 @@
   max-width:420px;
   margin: 0 auto;
   cursor: pointer;
+  color: #e2e2e2;
   position: relative;
   margin-top: 10px;
   margin-bottom: 10px;

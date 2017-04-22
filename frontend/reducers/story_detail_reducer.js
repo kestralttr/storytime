@@ -5,7 +5,6 @@ const _defaultState = {
   story: null,
   errors: []
 };
-console.log("story detail reducer accessed");
 const StoryDetailReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   let newState = merge({},state);
@@ -15,7 +14,6 @@ const StoryDetailReducer = (state = _defaultState, action) => {
       newState["errors"] = [];
       return newState;
     case CLEAR_STORY:
-      console.log("CLEARING STORY");
       newState["story"] = null;
       newState["errors"] = [];
       return newState;

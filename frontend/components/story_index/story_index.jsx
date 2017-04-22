@@ -16,7 +16,6 @@ class StoryIndex extends React.Component {
   componentWillReceiveProps(newProps) {
     if(newProps.storyDetail && newProps.storyDetail.story) {
       this.props.clearStory();
-      console.log(this.props);
     }
   }
 
@@ -46,7 +45,6 @@ class StoryIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return(
       <section id="story-index-master">
         <div id="storytime-index-nav-bar">

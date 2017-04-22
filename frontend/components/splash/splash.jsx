@@ -56,9 +56,9 @@ class Splash extends React.Component {
           <h1 onClick={this.handleReload}>Storytime</h1>
           <div id="splash-instructions-container">
             Tell your story, one word at a time.<br></br><br></br>
-            Here you can bring stories to life<br></br>
-            with others by taking turns<br></br>
-            adding words.<br></br>
+          Here you can create stories and bring<br></br>
+            them to life with others by taking<br></br>
+            turns adding words.<br></br>
           </div>
           <div id="splash-button" onClick={this.handleClick}>Enter</div>
         </div>

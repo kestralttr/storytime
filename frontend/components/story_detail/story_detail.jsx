@@ -63,7 +63,6 @@ class StoryDetail extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return(
       <section id="story-detail-master">
         <div id="storytime-detail-nav-bar">

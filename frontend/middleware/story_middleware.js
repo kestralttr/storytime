@@ -6,7 +6,7 @@ const StoryMiddleware = ({getState,dispatch}) => next => action => {
   const storySuccess = story => dispatch(receiveStory(story));
   const createStorySuccess = story => dispatch(receiveStory(story));
   const updateStorySuccess = story => dispatch(receiveStory(story));
-  console.log(action.type);
+
   switch(action.type) {
     case REQUEST_STORIES:
       fetchStories(storiesSuccess);

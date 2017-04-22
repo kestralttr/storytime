@@ -70,7 +70,8 @@
 #story-detail-body {
   padding: 20px 20px 20px 20px;
   font-size: 20px;
-  line-height: 22px;
+  line-height: 30px;
+  color: #cccccc;
 }
 
 #storytime-detail-headline {
@@ -94,6 +95,7 @@
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
+  color: #e2e2e2;
 }
 
 @media only screen and (max-width: 375px) {
