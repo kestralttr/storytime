@@ -32,7 +32,7 @@ class Splash extends React.Component {
     if (!document.getElementById("rvJS")) {
       let scriptTag = document.createElement("script");
       scriptTag.id = "rvJS";
-      scriptTag.src = "http://code.responsivevoice.org/responsivevoice.js";
+      scriptTag.src = "https://code.responsivevoice.org/responsivevoice.js";
       scriptTag.async = true;
 
       document.head.appendChild(scriptTag);
