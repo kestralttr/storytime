@@ -64,10 +64,25 @@ class UpdateStory extends React.Component {
     }
     if(containsSpace === true) {
       return;
-    } else {
+    } else if(arr[0].match(/[a-z]/i)) {
       let first = arr[0];
       let rest = arr.slice(1,arr.length).join("").toLowerCase();
       let submission = first + rest;
+
+      const story = {
+        body: submission,
+        tracker_key: userTrackerKey
+      };
+      let id = this.props.params.storyId;
+      this.props.updateStory(id,{story});
+      let inputBox = document.getElementById("add-word-input");
+      inputBox.value = "";
+      this.state.body = "";
+    } else {
+      let first = arr[0].toUpperCase();
+      let second = arr[1];
+      let rest = arr.slice(2,arr.length).join("").toLowerCase();
+      let submission = first + second + rest;
 
       const story = {
         body: submission,
@@ -93,12 +108,15 @@ class UpdateStory extends React.Component {
 
     if(!responsiveVoice.isPlaying() && this.props.storyDetail) {
       let body = this.props.storyDetail.body;
+      playPauseButton.className = "pause-button";
       playPauseButton.innerHTML = "&#9724;";
       let switchBack = function() {
+        playPauseButton.className = "play-button";
         playPauseButton.innerHTML = "&#9658;";
       }
       responsiveVoice.speak(body, "UK English Male", {onend: switchBack});
     } else if(responsiveVoice.isPlaying() && this.props.storyDetail) {
+      playPauseButton.className = "play-button";
       playPauseButton.innerHTML = "&#9658;";
       responsiveVoice.cancel();
     }
@@ -120,7 +138,7 @@ class UpdateStory extends React.Component {
           <span>Next word: </span><input id="add-word-input" type="text"maxLength="50" autoComplete="off" onChange={this.updateTitle} /><input type="submit" value="Add" onClick={this.handleSubmit}></input><br></br>
           <p id="error-message"></p>
         </form>
-        <div id="play-pause-button" onClick={this.toggleReading}>&#9658;</div>
+        <div id="play-pause-button" className="play-button" onClick={this.toggleReading}>&#9658;</div>
 
       </div>
     );

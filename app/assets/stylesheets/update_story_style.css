@@ -121,16 +121,20 @@
   cursor: pointer;
 }
 
-#play-pause-button:hover {
-  text-shadow: 0px 0px 2px #cecece;
-}
-
 .play-button {
-
+  color:green;
 }
 
 .pause-button {
+  color:red;
+}
 
+.play-button:hover {
+  text-shadow: 0px 0px 4px green;
+}
+
+.pause-button:hover {
+  text-shadow: 0px 0px 4px red;
 }
 
 @media (max-width:542px) {
