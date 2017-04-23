@@ -117,7 +117,7 @@ class UpdateStory extends React.Component {
           </p>
         </div>
         <form>
-          <span>Next word: </span><input id="add-word-input" type="text"maxLength="50" autoComplete="off" onChange={this.updateTitle} /><input type="submit" value="Create" onClick={this.handleSubmit}></input><br></br>
+          <span>Next word: </span><input id="add-word-input" type="text"maxLength="50" autoComplete="off" onChange={this.updateTitle} /><input type="submit" value="Add" onClick={this.handleSubmit}></input><br></br>
           <p id="error-message"></p>
         </form>
         <div id="play-pause-button" onClick={this.toggleReading}>&#9658;</div>

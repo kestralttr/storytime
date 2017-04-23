@@ -83,3 +83,15 @@
 #splash-button:active {
   color: black;
 }
+
+@media only screen and (max-width:500px) {
+
+  #splash-content-container h1 {
+    font-size:60px;
+  }
+
+  #splash-instructions-container {
+    font-size: 16px;
+  }
+
+}
