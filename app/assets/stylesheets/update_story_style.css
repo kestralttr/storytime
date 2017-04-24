@@ -74,7 +74,7 @@
 #update-story-master input[type='text'] {
   margin: 8px 10px 10px 10px;
   outline-color: Transparent;
-  width: 100px;
+  width: 63vw;
   color: white;
   background-color: #424242;
   outline-color: Transparent;
@@ -85,9 +85,10 @@
 
 #update-story-master input[type='submit'] {
     font-size: 16px;
-    position: absolute;
+    margin-top: 5px;
+    /*position: absolute;
     top: 5px;
-    left: 225px;
+    right: 50px;*/
     background-color: rgba(50,50,50,0.3);
     color: #e5e5e5;
     padding: 5px;
@@ -141,5 +142,26 @@
   #error-message {
     font-size: 14px;
     margin-top: -5px;
+  }
+  #update-story-master input[type='text'] {
+    width: 57vw;
+  }
+}
+
+@media (max-width:490px) {
+  #update-story-master input[type='text'] {
+    width: 46vw;
+  }
+}
+
+@media (max-width:395px) {
+  #update-story-master input[type='text'] {
+    width: 35vw;
+  }
+}
+
+@media (min-width:680px) {
+  #update-story-master input[type='text'] {
+    width: 70vw;
   }
 }

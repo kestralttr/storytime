@@ -31,7 +31,7 @@ class CreateStory extends React.Component{
     } else {
       const story = {
         title: this.state.title,
-        every_word: true,
+        every_word: false,
         body: ""
       };
       this.props.createStory({story});

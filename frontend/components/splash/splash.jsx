@@ -55,7 +55,7 @@ class Splash extends React.Component {
           <div id="splash-h1-spacer"></div>
           <h1 onClick={this.handleReload}>Storytime</h1>
           <div id="splash-instructions-container">
-            Tell your story, one word at a time.<br></br><br></br>
+            Tell your story, one part at a time.<br></br><br></br>
             Here you can create stories and bring<br></br>
             them to life with others by taking<br></br>
             turns adding words.<br></br>

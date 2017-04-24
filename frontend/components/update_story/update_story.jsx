@@ -136,11 +136,11 @@ class UpdateStory extends React.Component {
       <div id="update-story-master">
         <div id="update-story-error-container" onClick={this.hideErrorMessage}>
           <p>
-            As the most recent contributor to this story, you'll have to wait either 15 minutes, or until another person contributes before you can add another word.  Keep checking back!
+            As the most recent contributor to this story, you'll have to wait either 15 minutes, or until another person contributes before you can add more words.  Keep checking back!
           </p>
         </div>
         <form>
-          <span>Next word: </span><input id="add-word-input" type="text"maxLength="100" autoComplete="off" onChange={this.updateTitle} /><input type="submit" value="Add" onClick={this.handleSubmit}></input><br></br>
+          <span>Next words: </span><input id="add-word-input" type="text" maxLength="100" autoComplete="off" onChange={this.updateTitle} /><input type="submit" value="Add" onClick={this.handleSubmit}></input><br></br>
           <p id="error-message"></p>
         </form>
         <div id="play-pause-button" className="play-button" onClick={this.toggleReading}>&#9658;</div>
