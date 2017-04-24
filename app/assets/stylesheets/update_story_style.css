@@ -75,6 +75,7 @@
   margin: 8px 10px 10px 10px;
   outline-color: Transparent;
   width: 63vw;
+  max-width: 570px;
   color: white;
   background-color: #424242;
   outline-color: Transparent;
